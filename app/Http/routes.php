@@ -36,3 +36,5 @@ $app->get('/', function() use ($app) {
  */
 $app->get('/{id}', function($id) use ($app) {
     $quote = Quote::query()->findOrFail($id);
+    return view('quote', ['quote' => $quote]);
+});
